@@ -17,6 +17,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        setLocationRelativeTo(null); // Center the JFrame on screen
     }
 
     /**
@@ -75,11 +76,12 @@ public class login extends javax.swing.JFrame {
         String pword; //123
         
         uname = unamebox.getText();
-        pword = pwordbox.getText();
+        pword = new String(pwordbox.getPassword());
         
         if(uname.equals("saveen") && pword.equals("123")){
             mainframe m1 = new mainframe();
             m1.setVisible(true);
+            m1.setLocationRelativeTo(null); // Center the mainframe too
             this.dispose();
         }
         else{

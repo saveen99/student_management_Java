@@ -45,17 +45,17 @@ public class login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("LOGIN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Username");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Password");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
-        jPanel1.add(unamebox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 240, -1));
-        jPanel1.add(pwordbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 240, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        jPanel1.add(unamebox, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 240, -1));
+        jPanel1.add(pwordbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 240, -1));
 
         loginbtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         loginbtn.setText("LOGIN");
@@ -64,11 +64,11 @@ public class login extends javax.swing.JFrame {
                 loginbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 390));
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(718, 400));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

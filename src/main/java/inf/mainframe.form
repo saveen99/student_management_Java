@@ -130,6 +130,9 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="searchbox">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchboxKeyReleased"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

@@ -49,6 +49,19 @@ public class mainframe extends javax.swing.JFrame {
         depbox.setSelectedItem(department);
     }
     
+    public void search(){
+        String srch = searchbox.getText();
+        
+        try {
+            String sql = "SELECT * From student WHERE sname LIKE '%"+srch+"%'";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            table1.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,6 +104,12 @@ public class mainframe extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Search"));
+
+        searchbox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchboxKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -342,6 +361,10 @@ public class mainframe extends javax.swing.JFrame {
     private void table1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_table1KeyReleased
         tabledata();
     }//GEN-LAST:event_table1KeyReleased
+
+    private void searchboxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchboxKeyReleased
+        search();
+    }//GEN-LAST:event_searchboxKeyReleased
 
     /**
      * @param args the command line arguments

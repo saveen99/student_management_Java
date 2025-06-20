@@ -231,7 +231,7 @@ public class mainframe extends javax.swing.JFrame {
 
         jLabel4.setText("ID");
 
-        idbox.setText("ID");
+        idbox.setText("--");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

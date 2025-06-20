@@ -293,6 +293,7 @@ public class mainframe extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+        tableload();
     }//GEN-LAST:event_insertbtnActionPerformed
 
     /**

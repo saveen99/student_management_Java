@@ -35,6 +35,19 @@ public class mainframe extends javax.swing.JFrame {
         }
     }
     
+    public void tabledata(){
+        int r = table1.getSelectedRow();
+        
+        String id = table1.getValueAt(r, 0).toString();
+        String name = table1.getValueAt(r, 1).toString();
+        String address = table1.getValueAt(r, 2).toString();
+        String department = table1.getValueAt(r, 3).toString();
+        
+        namebox.setText(name);
+        addressbox.setText(address);
+        depbox.setSelectedItem(department);
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -250,6 +263,11 @@ public class mainframe extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        table1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 0, 400, 410));
@@ -295,6 +313,10 @@ public class mainframe extends javax.swing.JFrame {
         }
         tableload();
     }//GEN-LAST:event_insertbtnActionPerformed
+
+    private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
+        tabledata();
+    }//GEN-LAST:event_table1MouseClicked
 
     /**
      * @param args the command line arguments

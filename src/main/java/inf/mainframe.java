@@ -43,6 +43,7 @@ public class mainframe extends javax.swing.JFrame {
         String address = table1.getValueAt(r, 2).toString();
         String department = table1.getValueAt(r, 3).toString();
         
+        idbox.setText(id);
         namebox.setText(name);
         addressbox.setText(address);
         depbox.setSelectedItem(department);
@@ -76,7 +77,7 @@ public class mainframe extends javax.swing.JFrame {
         clearbtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        idbox = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new javax.swing.JTable();
 
@@ -230,7 +231,7 @@ public class mainframe extends javax.swing.JFrame {
 
         jLabel4.setText("ID");
 
-        jLabel5.setText("ID");
+        idbox.setText("ID");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -248,7 +249,7 @@ public class mainframe extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jLabel4)
                         .addGap(64, 64, 64)
-                        .addComponent(jLabel5)))
+                        .addComponent(idbox)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -259,7 +260,7 @@ public class mainframe extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(idbox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(182, Short.MAX_VALUE))
@@ -383,12 +384,12 @@ public class mainframe extends javax.swing.JFrame {
     private javax.swing.JButton deletebtn;
     private javax.swing.JComboBox<String> depbox;
     private javax.swing.JButton exitbtn;
+    private javax.swing.JLabel idbox;
     private javax.swing.JButton insertbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

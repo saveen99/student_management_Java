@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package inf;
+
+import codes.DBconnect;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,11 +11,12 @@ package inf;
  */
 public class mainframe extends javax.swing.JFrame {
 
-    /**
-     * Creates new form mainframe
-     */
+    Connection conn = null;
+    PreparedStatement pst = null;
+    
     public mainframe() {
         initComponents();
+        conn = DBconnect.connect();
     }
 
     /**
@@ -91,6 +93,11 @@ public class mainframe extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
         insertbtn.setText("Insert");
+        insertbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertbtnActionPerformed(evt);
+            }
+        });
 
         updatebtn.setText("Update");
 
@@ -153,22 +160,17 @@ public class mainframe extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(1, 1, 1))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(11, 11, 11))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
                             .addComponent(jLabel1))
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(addressbox, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(namebox, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(depbox, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(depbox, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -244,6 +246,29 @@ public class mainframe extends javax.swing.JFrame {
     private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clearbtnActionPerformed
+
+    private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed
+        String name;
+        String address;
+        String department;
+        //int age;
+        //int grade;
+        
+        name = namebox.getText();
+        address = addressbox.getText();
+        department = depbox.getSelectedItem().toString();
+        //age = Integer.parseInt(agebox.getText());
+        //grade = Integer.parseInt(gradebox.getSelectedItem().toString());
+        
+        try {
+            String sql = "INSERT INTO student(sname,saddress,sdepartment)VALUES ('"+name+"','"+address+"','"+department+"')";
+            pst = conn.prepareStatement(sql);
+            pst.execute();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_insertbtnActionPerformed
 
     /**
      * @param args the command line arguments

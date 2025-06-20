@@ -267,6 +267,12 @@ public class mainframe extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null, "Insert Successfully");
             
+            //Clear input fields after successful insert
+            namebox.setText("");
+            addressbox.setText("");
+            searchbox.setText("");
+            depbox.setSelectedIndex(0); // Set combo box to "Select"
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }

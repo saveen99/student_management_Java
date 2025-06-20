@@ -3,7 +3,9 @@ package inf;
 import codes.DBconnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -13,12 +15,27 @@ public class mainframe extends javax.swing.JFrame {
 
     Connection conn = null;
     PreparedStatement pst = null;
+    ResultSet rs = null;
     
     public mainframe() {
         initComponents();
         conn = DBconnect.connect();
+        tableload();
     }
 
+    public void tableload(){
+        try {
+            String sql = "SELECT id,sname,saddress,sdepartment FROM student";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            table1.setModel(DbUtils.resultSetToTableModel(rs));
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

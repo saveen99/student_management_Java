@@ -53,7 +53,7 @@ public class mainframe extends javax.swing.JFrame {
         String srch = searchbox.getText();
         
         try {
-            String sql = "SELECT * From student WHERE sname LIKE '%"+srch+"%'";
+            String sql = "SELECT * From student WHERE sname LIKE '%"+srch+"%' OR id LIKE '%"+srch+"%'";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             table1.setModel(DbUtils.resultSetToTableModel(rs));

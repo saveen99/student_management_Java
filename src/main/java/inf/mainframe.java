@@ -265,6 +265,8 @@ public class mainframe extends javax.swing.JFrame {
             pst = conn.prepareStatement(sql);
             pst.execute();
             
+            JOptionPane.showMessageDialog(null, "Insert Successfully");
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }

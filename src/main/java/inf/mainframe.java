@@ -267,6 +267,11 @@ public class mainframe extends javax.swing.JFrame {
                 table1MouseClicked(evt);
             }
         });
+        table1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                table1KeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(table1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 0, 400, 410));
@@ -316,6 +321,10 @@ public class mainframe extends javax.swing.JFrame {
     private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
         tabledata();
     }//GEN-LAST:event_table1MouseClicked
+
+    private void table1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_table1KeyReleased
+        tabledata();
+    }//GEN-LAST:event_table1KeyReleased
 
     /**
      * @param args the command line arguments

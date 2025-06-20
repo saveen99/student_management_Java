@@ -25,7 +25,7 @@ public class mainframe extends javax.swing.JFrame {
 
     public void tableload(){
         try {
-            String sql = "SELECT sname,saddress,sdepartment FROM student";
+            String sql = "SELECT id,sname,saddress,sdepartment FROM student";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             table1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -38,9 +38,10 @@ public class mainframe extends javax.swing.JFrame {
     public void tabledata(){
         int r = table1.getSelectedRow();
         
-        String name = table1.getValueAt(r, 0).toString();
-        String address = table1.getValueAt(r, 1).toString();
-        String department = table1.getValueAt(r, 2).toString();
+        String id = table1.getValueAt(r, 0).toString();
+        String name = table1.getValueAt(r, 1).toString();
+        String address = table1.getValueAt(r, 2).toString();
+        String department = table1.getValueAt(r, 3).toString();
         
         namebox.setText(name);
         addressbox.setText(address);

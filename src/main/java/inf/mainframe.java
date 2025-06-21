@@ -25,7 +25,7 @@ public class mainframe extends javax.swing.JFrame {
 
     public void tableload(){
         try {
-            String sql = "SELECT id,sname,saddress,sdepartment FROM student";
+            String sql = "SELECT id AS ID,sname AS Name,saddress AS Address,sdepartment AS Department FROM student";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             table1.setModel(DbUtils.resultSetToTableModel(rs));

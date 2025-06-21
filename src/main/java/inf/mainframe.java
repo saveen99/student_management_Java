@@ -403,6 +403,7 @@ public class mainframe extends javax.swing.JFrame {
     private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
         update();
         tableload();
+        clear();
     }//GEN-LAST:event_updatebtnActionPerformed
 
     private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
@@ -420,6 +421,7 @@ public class mainframe extends javax.swing.JFrame {
             }
         }
         tableload();
+        clear();
     }//GEN-LAST:event_deletebtnActionPerformed
 
     /**

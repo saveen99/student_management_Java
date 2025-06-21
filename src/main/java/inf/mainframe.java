@@ -78,7 +78,13 @@ public class mainframe extends javax.swing.JFrame {
         }
     }
     
-    
+    public void clear(){
+        searchbox.setText("");
+        idbox.setText("--");
+        namebox.setText("");
+        addressbox.setText("");
+        depbox.setSelectedIndex(0);
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -346,7 +352,7 @@ public class mainframe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearbtnActionPerformed
-        // TODO add your handling code here:
+        clear();
     }//GEN-LAST:event_clearbtnActionPerformed
 
     private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed

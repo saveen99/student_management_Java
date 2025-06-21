@@ -353,6 +353,7 @@ public class mainframe extends javax.swing.JFrame {
 
     private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearbtnActionPerformed
         clear();
+        tableload();
     }//GEN-LAST:event_clearbtnActionPerformed
 
     private void insertbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertbtnActionPerformed

@@ -78,18 +78,6 @@ public class mainframe extends javax.swing.JFrame {
         }
     }
     
-    public void delete(){
-        String id = idbox.getText();
-        
-        try {
-            String sql = "DELETE FROM student WHERE id='"+id+"'";
-            pst = conn.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "Delete Successfully!");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Delete Error!");
-        }
-    }
     
     
     /**
@@ -411,8 +399,19 @@ public class mainframe extends javax.swing.JFrame {
     }//GEN-LAST:event_updatebtnActionPerformed
 
     private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
-        delete();
-        tableload();
+        int check = JOptionPane.showConfirmDialog(null, "Are you sure delete?");
+        
+        if (check==0) {
+            String id = idbox.getText();
+            try {
+                String sql = "DELETE FROM student WHERE id='"+id+"'";
+                pst = conn.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Delete Successfully!");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Delete Error!");
+            }
+        }
     }//GEN-LAST:event_deletebtnActionPerformed
 
     /**

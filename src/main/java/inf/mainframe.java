@@ -412,6 +412,7 @@ public class mainframe extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Delete Error!");
             }
         }
+        tableload();
     }//GEN-LAST:event_deletebtnActionPerformed
 
     /**

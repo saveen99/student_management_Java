@@ -62,6 +62,22 @@ public class mainframe extends javax.swing.JFrame {
         }
     }
     
+    public void update(){
+        String id = idbox.getText();
+        String name = namebox.getText();
+        String address = addressbox.getText();
+        String department = depbox.getSelectedItem().toString();
+        
+        try {
+            String sql = "UPDATE student SET sname='"+name+"',saddress='"+address+"',sdepartment='"+department+"' WHERE id='"+id+"' ";
+            pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Updated!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Update Error!");
+        }
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,6 +168,11 @@ public class mainframe extends javax.swing.JFrame {
         });
 
         updatebtn.setText("Update");
+        updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtnActionPerformed(evt);
+            }
+        });
 
         deletebtn.setBackground(new java.awt.Color(255, 0, 0));
         deletebtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -365,6 +386,11 @@ public class mainframe extends javax.swing.JFrame {
     private void searchboxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchboxKeyReleased
         search();
     }//GEN-LAST:event_searchboxKeyReleased
+
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        update();
+        tableload();
+    }//GEN-LAST:event_updatebtnActionPerformed
 
     /**
      * @param args the command line arguments

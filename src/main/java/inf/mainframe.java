@@ -78,6 +78,19 @@ public class mainframe extends javax.swing.JFrame {
         }
     }
     
+    public void delete(){
+        String id = idbox.getText();
+        
+        try {
+            String sql = "DELETE FROM student WHERE id='"+id+"'";
+            pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Delete Successfully!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Delete Error!");
+        }
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -177,6 +190,11 @@ public class mainframe extends javax.swing.JFrame {
         deletebtn.setBackground(new java.awt.Color(255, 0, 0));
         deletebtn.setForeground(new java.awt.Color(255, 255, 255));
         deletebtn.setText("Delete");
+        deletebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebtnActionPerformed(evt);
+            }
+        });
 
         clearbtn.setText("Clear");
         clearbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -391,6 +409,11 @@ public class mainframe extends javax.swing.JFrame {
         update();
         tableload();
     }//GEN-LAST:event_updatebtnActionPerformed
+
+    private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
+        delete();
+        tableload();
+    }//GEN-LAST:event_deletebtnActionPerformed
 
     /**
      * @param args the command line arguments
